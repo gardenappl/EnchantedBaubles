@@ -9,6 +9,7 @@ import goldenapple.enchbaubles.reference.Reference;
 import org.apache.logging.log4j.Level;
 
 public class EnchBaublesCoreContainer extends DummyModContainer {
+
     public EnchBaublesCoreContainer(){
         super(new ModMetadata());
         ModMetadata meta = getMetadata();
@@ -25,11 +26,11 @@ public class EnchBaublesCoreContainer extends DummyModContainer {
         return true;
     }
 
-    public static void info(String string){
-        FMLRelaunchLog.log("Enchanted Baubles Core", Level.INFO, string);
+    public static void info(String string, Object... formatData){
+        FMLRelaunchLog.log("Enchanted Baubles Core", Level.INFO, string, formatData);
     }
 
-    public static void error(String string){
-        FMLRelaunchLog.log("Enchanted Baubles Core", Level.ERROR, string);
+    public static void error(String string, Object... formatData){
+        FMLRelaunchLog.log("Enchanted Baubles Core", Level.ERROR, string, formatData);
     }
 }

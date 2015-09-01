@@ -4,14 +4,16 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;
 
+import static goldenapple.enchbaubles.asm.EnchBaublesCoreContainer.info;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.TransformerExclusions("goldenapple.enchbaubles")
 public class EnchBaublesLoadingPlugin implements IFMLLoadingPlugin {
 
     public EnchBaublesLoadingPlugin(){
-        EnchBaublesCoreContainer.info("Loading...");
+        info("Loading...");
     }
+
     @Override
     public String[] getASMTransformerClass() {
         return new String[]{ItemTransformer.class.getName()};
