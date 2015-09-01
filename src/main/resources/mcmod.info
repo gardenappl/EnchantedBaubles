@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ench_baubles",
+  "name": "Enchanted Baubles",
+  "description": "Adds passive enchantements to Baubles",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["goldenapple"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
