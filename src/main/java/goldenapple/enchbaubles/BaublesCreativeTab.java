@@ -6,7 +6,6 @@ import goldenapple.enchbaubles.enchant.EnchantmentBauble;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-import java.util.Iterator;
 import java.util.List;
 
 public class BaublesCreativeTab extends CreativeTabs {
@@ -21,18 +20,24 @@ public class BaublesCreativeTab extends CreativeTabs {
 
     @Override
     public void displayAllReleventItems(List list) {
-        Iterator iterator = Item.itemRegistry.iterator();
+        for(Object object : Item.itemRegistry){
+            Item item = (Item) object;
 
-        while(iterator.hasNext()){
-            Item item = (Item) iterator.next();
-
-            if(item != null && item instanceof IBauble)
-                item.getSubItems(item, this, list);
+            if(item != null) {
+                if (item instanceof IBauble)
+                    item.getSubItems(item, this, list);
+                else {
+                    for (CreativeTabs tab : item.getCreativeTabs()) {
+                        if (tab == this)
+                            item.getSubItems(item, this, list);
+                    }
+                }
+            }
         }
 
-        this.addEnchantmentBooksToList(list, EnchantmentBauble.bauble);
-        this.addEnchantmentBooksToList(list, EnchantmentBauble.amulet);
-        this.addEnchantmentBooksToList(list, EnchantmentBauble.ring);
-        this.addEnchantmentBooksToList(list, EnchantmentBauble.belt);
+        addEnchantmentBooksToList(list, EnchantmentBauble.bauble);
+        addEnchantmentBooksToList(list, EnchantmentBauble.amulet);
+        addEnchantmentBooksToList(list, EnchantmentBauble.ring);
+        addEnchantmentBooksToList(list, EnchantmentBauble.belt);
     }
 }
