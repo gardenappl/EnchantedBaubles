@@ -1,14 +1,14 @@
 package goldenapple.enchbaubles.enchant;
 
-public class EnchantmentExperience extends EnchantmentBauble {
-    public EnchantmentExperience(int id){
-        super(id, 2);
-        this.setName("experience");
+public class EnchantmentSaturation extends EnchantmentBauble {
+    public EnchantmentSaturation(int id) {
+        super(id, 3, EnchantmentBauble.belt);
+        this.setName("saturation");
     }
 
     @Override
     public int getMinEnchantability(int lvl) {
-        return 8 + 10 * (lvl - 1);
+        return 1 + 8 * (lvl - 1);
     }
 
     @Override
@@ -18,6 +18,6 @@ public class EnchantmentExperience extends EnchantmentBauble {
 
     @Override
     public int getMaxLevel() {
-        return 3;
+        return 5;
     }
 }

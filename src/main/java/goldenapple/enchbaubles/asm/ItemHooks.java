@@ -2,6 +2,7 @@ package goldenapple.enchbaubles.asm;
 
 import baubles.api.IBauble;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 
 public class ItemHooks {
     public static boolean isEnchantable(ItemStack stack){
@@ -9,11 +10,19 @@ public class ItemHooks {
     }
 
     public static int getEnchantability(ItemStack stack){
-        switch(stack.getRarity()){
-            case uncommon: return 20;
-            case rare:
-            case epic: return 30;
-            default: return 10;
+        if(stack.getItem() instanceof IBauble && stack.getItem().getItemEnchantability() <= 0) {
+            switch (stack.getRarity()) {
+                case uncommon: return 20;
+                case rare:
+                case epic: return 30;
+                default:
+                    if(stack.getRarity().rarityColor == EnumChatFormatting.GOLD) { //Botania relics
+                        return 30;
+                    }
+                    return 10;
+            }
+        }else{
+            return stack.getItem().getItemEnchantability();
         }
     }
 }

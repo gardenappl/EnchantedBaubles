@@ -7,7 +7,7 @@ import java.util.Map;
 import static goldenapple.enchbaubles.asm.EnchBaublesCoreContainer.info;
 
 @IFMLLoadingPlugin.MCVersion("1.7.10")
-@IFMLLoadingPlugin.TransformerExclusions("goldenapple.enchbaubles")
+@IFMLLoadingPlugin.TransformerExclusions("goldenapple.enchbaubles") //modifying my own mod while I'm modifying my own mod isn't cool.
 public class EnchBaublesLoadingPlugin implements IFMLLoadingPlugin {
 
     public EnchBaublesLoadingPlugin(){
