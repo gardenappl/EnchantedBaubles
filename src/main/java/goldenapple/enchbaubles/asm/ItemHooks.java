@@ -12,9 +12,10 @@ public class ItemHooks {
     public static int getEnchantability(ItemStack stack){
         if(stack.getItem() instanceof IBauble && stack.getItem().getItemEnchantability() <= 0) {
             switch (stack.getRarity()) {
-                case uncommon: return 20;
-                case rare:
-                case epic: return 30;
+                case common: return 10;
+                case uncommon: return 15;
+                case rare: return 20;
+                case epic: return 25;
                 default:
                     if(stack.getRarity().rarityColor == EnumChatFormatting.GOLD) { //Botania relics
                         return 30;

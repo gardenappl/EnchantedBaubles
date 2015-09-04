@@ -1,6 +1,7 @@
 enchantment.ench_baubles.experience=Experience
 enchantment.ench_baubles.reach=Sky Reach
 enchantment.ench_baubles.saturation=Saturation
+enchantment.ench_baubles.regen=Regeneration
 
 config.ench_baubles.experience_id=Experience Enchantment ID
 config.ench_baubles.experience_id.tooltip=Internal ID of the Experience enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
@@ -8,5 +9,7 @@ config.ench_baubles.reach_id=Sky Reach Enchantment ID
 config.ench_baubles.reach_id.tooltip=Internal ID of the Sky Reach enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
 config.ench_baubles.saturation_id=Saturation Enchantment ID
 config.ench_baubles.saturation_id.tooltip=Internal ID of the Saturation enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
+config.ench_baubles.regen_id=Regeneration Enchantment ID
+config.ench_baubles.regen_id.tooltip=Internal ID of the Regeneration enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
 
 itemGroup.baubles=Baubles

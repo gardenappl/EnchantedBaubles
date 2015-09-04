@@ -26,11 +26,13 @@ public class EnchBaublesCoreContainer extends DummyModContainer {
         return true;
     }
 
-    public static void info(String string, Object... formatData){
-        FMLRelaunchLog.log("Enchanted Baubles Core", Level.INFO, string, formatData);
-    }
+    public static class RelaunchLogHelper{
+        public static void info(String string, Object... formatData){
+            FMLRelaunchLog.log("Enchanted Baubles Core", Level.INFO, string, formatData);
+        }
 
-    public static void error(String string, Object... formatData){
-        FMLRelaunchLog.log("Enchanted Baubles Core", Level.ERROR, string, formatData);
+        public static void error(String string, Object... formatData){
+            FMLRelaunchLog.log("Enchanted Baubles Core", Level.ERROR, string, formatData);
+        }
     }
 }

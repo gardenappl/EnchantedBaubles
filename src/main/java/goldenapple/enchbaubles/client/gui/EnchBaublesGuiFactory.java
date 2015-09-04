@@ -1,4 +1,4 @@
-package goldenapple.enchbaubles.gui;
+package goldenapple.enchbaubles.client.gui;
 
 import cpw.mods.fml.client.IModGuiFactory;
 import cpw.mods.fml.client.config.GuiConfig;

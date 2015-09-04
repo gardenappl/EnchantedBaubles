@@ -1,6 +1,5 @@
 package goldenapple.enchbaubles.enchant;
 
-import baubles.api.BaubleType;
 import baubles.api.IBauble;
 import goldenapple.enchbaubles.reference.Reference;
 import net.minecraft.enchantment.Enchantment;
@@ -23,15 +22,16 @@ public class EnchantmentBauble extends Enchantment {
     }
 
     @Override
-    public boolean canApply(ItemStack itemStack) {
-        if(type == amulet)
-            return itemStack.getItem() instanceof IBauble && ((IBauble) itemStack.getItem()).getBaubleType(itemStack) == BaubleType.AMULET;
-        else if(type == ring)
-            return itemStack.getItem() instanceof IBauble && ((IBauble) itemStack.getItem()).getBaubleType(itemStack) == BaubleType.RING;
-        else if(type == belt)
-            return itemStack.getItem() instanceof IBauble && ((IBauble) itemStack.getItem()).getBaubleType(itemStack) == BaubleType.BELT;
-        else
-            return itemStack.getItem() instanceof IBauble;
+    public boolean canApply(ItemStack stack) {
+        if(!(stack.getItem() instanceof IBauble))
+            return false;
+
+        switch(((IBauble) stack.getItem()).getBaubleType(stack)) {
+            case AMULET: return type == amulet || type == bauble;
+            case RING: return type == ring || type == bauble;
+            case BELT: return type == belt || type == bauble;
+            default: return type == bauble;
+        }
     }
 
     @Override

@@ -1,8 +1,8 @@
 .gradle
-.idea
-libs
 run
 out
+libs
+build
 *.iml
-*.ipr
 *.iws
+*.ipr
