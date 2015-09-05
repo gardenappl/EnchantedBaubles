@@ -1,8 +1,8 @@
 package goldenapple.enchbaubles.enchant;
 
 public class EnchantmentReach extends EnchantmentBauble {
-    public EnchantmentReach(int id) {
-        super(id, 2, EnchantmentBauble.ring);
+    public EnchantmentReach(int id, int weight) {
+        super(id, weight, EnchantmentBauble.ring);
         this.setName("reach");
     }
 

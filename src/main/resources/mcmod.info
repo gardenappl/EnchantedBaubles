@@ -1,6 +1,6 @@
 [
 {
-  "modid": "ench_baubles",
+  "modid": "enchbaubles",
   "name": "Enchanted Baubles",
   "description": "Adds passive enchantements to Baubles",
   "version": "${version}",
@@ -8,7 +8,7 @@
   "url": "",
   "updateUrl": "",
   "authorList": ["goldenapple"],
-  "credits": "",
+  "credits": "Ljfa for providing examples of writing coremods",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

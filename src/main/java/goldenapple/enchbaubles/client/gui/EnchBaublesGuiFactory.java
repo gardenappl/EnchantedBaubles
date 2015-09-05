@@ -40,7 +40,7 @@ public class EnchBaublesGuiFactory implements IModGuiFactory{
         }
 
         @SuppressWarnings("unchecked")
-        private static List<IConfigElement> getConfigElements(){ //just to avoid having 200+ characters on one line in the constructor
+        private static List<IConfigElement> getConfigElements(){
             return new ConfigElement(ConfigHandler.config.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements();
         }
     }

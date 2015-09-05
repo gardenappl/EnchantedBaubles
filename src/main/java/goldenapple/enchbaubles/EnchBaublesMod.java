@@ -5,10 +5,7 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import goldenapple.enchbaubles.enchant.EnchantmentExperience;
-import goldenapple.enchbaubles.enchant.EnchantmentReach;
-import goldenapple.enchbaubles.enchant.EnchantmentRegen;
-import goldenapple.enchbaubles.enchant.EnchantmentSaturation;
+import goldenapple.enchbaubles.enchant.*;
 import goldenapple.enchbaubles.handler.ConfigHandler;
 import goldenapple.enchbaubles.handler.PlayerEventHandler;
 import goldenapple.enchbaubles.reference.Reference;
@@ -20,11 +17,16 @@ public class EnchBaublesMod {
     public static EnchantmentReach reach;
     public static EnchantmentSaturation saturation;
     public static EnchantmentRegen regen;
+    public static EnchantmentCritical critical;
 
     public static BaublesCreativeTab creativeTab = new BaublesCreativeTab();
 
+    @Mod.Instance(Reference.MOD_ID)
+    public static EnchBaublesMod instance;
+
     @SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.COMMON_PROXY)
     public static CommonProxy proxy;
+
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event){
@@ -32,10 +34,16 @@ public class EnchBaublesMod {
         FMLCommonHandler.instance().bus().register(new ConfigHandler());
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
 
-        experience = new EnchantmentExperience(ConfigHandler.experienceID);
-        reach = new EnchantmentReach(ConfigHandler.reachID);
-        saturation = new EnchantmentSaturation(ConfigHandler.saturationID);
-        regen = new EnchantmentRegen(ConfigHandler.regenID);
+        if(ConfigHandler.experienceEnabled)
+            experience = new EnchantmentExperience(ConfigHandler.experienceID, ConfigHandler.experienceWeight);
+        if(ConfigHandler.reachEnabled)
+            reach = new EnchantmentReach(ConfigHandler.reachID, ConfigHandler.reachWeight);
+        if(ConfigHandler.saturationEnabled)
+            saturation = new EnchantmentSaturation(ConfigHandler.saturationID, ConfigHandler.saturationWeight);
+        if(ConfigHandler.regenEnabled)
+            regen = new EnchantmentRegen(ConfigHandler.regenID, ConfigHandler.reachWeight);
+        if(ConfigHandler.criticalEnabled)
+            critical = new EnchantmentCritical(ConfigHandler.criticalID, ConfigHandler.criticalWeight);
     }
 
     @Mod.EventHandler

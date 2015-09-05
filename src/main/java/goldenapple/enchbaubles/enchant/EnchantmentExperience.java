@@ -1,14 +1,14 @@
 package goldenapple.enchbaubles.enchant;
 
 public class EnchantmentExperience extends EnchantmentBauble {
-    public EnchantmentExperience(int id){
-        super(id, 10);
+    public EnchantmentExperience(int id, int weight){
+        super(id, weight);
         this.setName("experience");
     }
 
     @Override
     public int getMinEnchantability(int lvl) {
-        return 15 + 10 * (lvl - 1);
+        return 1 + 16 * (lvl - 1);
     }
 
     @Override

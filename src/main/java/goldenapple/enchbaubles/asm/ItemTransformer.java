@@ -73,10 +73,10 @@ public class ItemTransformer implements IClassTransformer {
             if (node instanceof MethodInsnNode){
                 MethodInsnNode currentNode = (MethodInsnNode) node;
                 if(currentNode.name.equals("getItemEnchantability") || currentNode.name.equals("c")) {
-                    if (node.getNext().getOpcode() == IRETURN) {
+                    if (node.getNext().getOpcode() == IRETURN) { //if there is an IRETURN after that
                         InsnList toInject = new InsnList(); //And now we're modifying them
-                        toInject.add(new VarInsnNode(ALOAD, 1)); //Load local variable 1 (the method's "stack" parameter)
-                        toInject.add(new MethodInsnNode(INVOKESTATIC, "goldenapple/enchbaubles/asm/ItemHooks", "getEnchantability", obfuscated ? "(Ladd;)I" : "(Lnet/minecraft/item/ItemStack;)I", false)); //Call our hook
+                        toInject.add(new VarInsnNode(ALOAD, 1)); //Load local variable 1 (the method's "stack" argument)
+                        toInject.add(new MethodInsnNode(INVOKESTATIC, "goldenapple/enchbaubles/asm/ItemHooks", "getEnchantability", obfuscated ? "(Ladd;)I" : "(Lnet/minecraft/item/ItemStack;)I", false)); //Call our hook ("stack" will be given as the argument)
                         methodNode.instructions.insertBefore(node, toInject);
                         methodNode.instructions.remove(node); //Remove vanilla's getItemEnchantability call
                         injected = true;
@@ -101,7 +101,7 @@ public class ItemTransformer implements IClassTransformer {
             if(node.getOpcode() == INVOKEVIRTUAL && !injected){ //We'll just find the first called method, override it and return. It's lazy but it works.
                 InsnList toInject = new InsnList();
                 toInject.add(new VarInsnNode(ALOAD, 0)); //Load local variable 0 ("this")
-                toInject.add(new MethodInsnNode(INVOKESTATIC, "goldenapple/enchbaubles/asm/ItemHooks", "isEnchantable", obfuscated ? "(Ladd;)Z" : "(Lnet/minecraft/item/ItemStack;)Z", false)); //Call our hook
+                toInject.add(new MethodInsnNode(INVOKESTATIC, "goldenapple/enchbaubles/asm/ItemHooks", "isEnchantable", obfuscated ? "(Ladd;)Z" : "(Lnet/minecraft/item/ItemStack;)Z", false)); //Call our hook ("this" will be given as the argument)
                 toInject.add(new InsnNode(IRETURN)); //And return the value that we get
                 methodNode.instructions.insertBefore(node, toInject);
                 injected = true;

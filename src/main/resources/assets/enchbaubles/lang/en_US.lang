@@ -1,15 +1,42 @@
-enchantment.ench_baubles.experience=Experience
-enchantment.ench_baubles.reach=Sky Reach
-enchantment.ench_baubles.saturation=Saturation
-enchantment.ench_baubles.regen=Regeneration
+enchantment.enchbaubles.experience=Experience
+enchantment.enchbaubles.reach=Sky Reach
+enchantment.enchbaubles.saturation=Saturation
+enchantment.enchbaubles.regen=Restoration
+enchantment.enchbaubles.critical=Fatality
 
-config.ench_baubles.experience_id=Experience Enchantment ID
-config.ench_baubles.experience_id.tooltip=Internal ID of the Experience enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
-config.ench_baubles.reach_id=Sky Reach Enchantment ID
-config.ench_baubles.reach_id.tooltip=Internal ID of the Sky Reach enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
-config.ench_baubles.saturation_id=Saturation Enchantment ID
-config.ench_baubles.saturation_id.tooltip=Internal ID of the Saturation enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
-config.ench_baubles.regen_id=Regeneration Enchantment ID
-config.ench_baubles.regen_id.tooltip=Internal ID of the Regeneration enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
+
+config.enchbaubles.experience=Enable Experience Enchantment
+config.enchbaubles.experience.tooltip=Set this to false to disable the Experience enchantment
+config.enchbaubles.reach=Enable Sky Reach Enchantment
+config.enchbaubles.reach.tooltip=Set this to false to disable the Sky Reach enchantment
+config.enchbaubles.saturation=Enable Saturation Enchantment
+config.enchbaubles.saturation.tooltip=Set this to false to disable the Saturation enchantment
+config.enchbaubles.regen=Enable Restoration Enchantment
+config.enchbaubles.regen.tooltip=Set this to false to disable the Restoration enchantment
+config.enchbaubles.critical=Enable Fatality Enchantment
+config.enchbaubles.critical.tooltip=Set this to false to disable the Fatality enchantment
+
+config.enchbaubles.experience_weight=Experience Enchantment Weight
+config.enchbaubles.experience_weight.tooltip=The chance to get the Experience enchantment (higher weight = more common)
+config.enchbaubles.reach_weight=Sky Reach Enchantment Weight
+config.enchbaubles.reach_weight.tooltip=The chance to get the Sky Reach enchantment (higher weight = more common)
+config.enchbaubles.saturation_weight=Saturation Enchantment Weight
+config.enchbaubles.saturation_weight.tooltip=The chance to get the Saturation enchantment (higher weight = more common)
+config.enchbaubles.regen_weight=Restoration Enchantment Weight
+config.enchbaubles.regen_weight.tooltip=The chance to get the Restoration enchantment (higher weight = more common)
+config.enchbaubles.critical_weight=Fatality Enchantment Weight
+config.enchbaubles.critical_weight.tooltip=The chance to get the Fatality enchantment (higher weight = more common)
+
+config.enchbaubles.experience_id=Experience Enchantment ID
+config.enchbaubles.experience_id.tooltip=Internal ID of the Experience enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
+config.enchbaubles.reach_id=Sky Reach Enchantment ID
+config.enchbaubles.reach_id.tooltip=Internal ID of the Sky Reach enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
+config.enchbaubles.saturation_id=Saturation Enchantment ID
+config.enchbaubles.saturation_id.tooltip=Internal ID of the Saturation enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
+config.enchbaubles.regen_id=Regeneration Enchantment ID
+config.enchbaubles.regen_id.tooltip=Internal ID of the Regeneration enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
+config.enchbaubles.fatality_id=Fatality Enchantment ID
+config.enchbaubles.fatality_id.tooltip=Internal ID of the Fatality enchantment. It is recommended to only change this value if an ID conflict is preventing you from launching the game.
+
 
 itemGroup.baubles=Baubles

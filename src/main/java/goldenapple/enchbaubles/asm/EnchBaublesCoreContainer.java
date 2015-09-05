@@ -13,12 +13,13 @@ public class EnchBaublesCoreContainer extends DummyModContainer {
     public EnchBaublesCoreContainer(){
         super(new ModMetadata());
         ModMetadata meta = getMetadata();
-        meta.modId = "ench_baubles_core";
-        meta.name = "Enchanted Baubles Core";
+        meta.modId = Reference.MOD_ID + "core";
+        meta.name = Reference.MOD_NAME + " Core";
         meta.version = Reference.VERSION;
         meta.authorList.add("goldenapple");
         meta.description = "The core mod for Enchanted Baubles. It's needed for stuff and things to work.";
-        meta.parent = "ench_baubles";
+        meta.credits = "Ljfa for providing examples of writing coremods";
+        meta.parent = Reference.MOD_ID;
     }
 
     @Override
@@ -28,11 +29,11 @@ public class EnchBaublesCoreContainer extends DummyModContainer {
 
     public static class RelaunchLogHelper{
         public static void info(String string, Object... formatData){
-            FMLRelaunchLog.log("Enchanted Baubles Core", Level.INFO, string, formatData);
+            FMLRelaunchLog.log(Reference.MOD_NAME + " Core", Level.INFO, string, formatData);
         }
 
         public static void error(String string, Object... formatData){
-            FMLRelaunchLog.log("Enchanted Baubles Core", Level.ERROR, string, formatData);
+            FMLRelaunchLog.log(Reference.MOD_NAME + " Core", Level.ERROR, string, formatData);
         }
     }
 }

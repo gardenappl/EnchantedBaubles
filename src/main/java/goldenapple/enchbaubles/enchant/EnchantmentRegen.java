@@ -1,14 +1,14 @@
 package goldenapple.enchbaubles.enchant;
 
 public class EnchantmentRegen extends EnchantmentBauble {
-    public EnchantmentRegen(int id){
-        super(id, 2);
+    public EnchantmentRegen(int id, int weight){
+        super(id, weight, EnchantmentBauble.amulet);
         this.setName("regen");
     }
 
     @Override
     public int getMinEnchantability(int lvl) {
-        return 12 + 15 * (lvl - 1);
+        return 12 + 14 * (lvl - 1);
     }
 
     @Override

@@ -22,10 +22,6 @@ public class EnchBaublesPlayerController extends PlayerControllerMP implements I
         return super.getBlockReachDistance() + reachBonus;
     }
 
-    public void addReachDistanceExtension(float reachBonus){
-        this.reachBonus += reachBonus;
-    }
-
    //Override
     public void setReachDistanceExtension(float reachBonus) {
         this.reachBonus = reachBonus;
@@ -34,5 +30,9 @@ public class EnchBaublesPlayerController extends PlayerControllerMP implements I
    //Override
     public float getReachDistanceExtension() {
         return reachBonus;
+    }
+
+    public void addReachDistanceExtension(float reachBonus){
+        this.reachBonus += reachBonus;
     }
 }

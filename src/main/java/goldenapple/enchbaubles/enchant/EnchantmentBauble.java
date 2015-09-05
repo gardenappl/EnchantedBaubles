@@ -13,11 +13,11 @@ public class EnchantmentBauble extends Enchantment {
     public static final EnumEnchantmentType ring = EnumHelper.addEnchantmentType("ring");
     public static final EnumEnchantmentType belt = EnumHelper.addEnchantmentType("belt");
 
-    protected EnchantmentBauble(int id, int weight) {
+    public EnchantmentBauble(int id, int weight) {
         super(id, weight, bauble);
     }
 
-    protected EnchantmentBauble(int id, int weight, EnumEnchantmentType type) {
+    public EnchantmentBauble(int id, int weight, EnumEnchantmentType type) {
         super(id, weight, type);
     }
 

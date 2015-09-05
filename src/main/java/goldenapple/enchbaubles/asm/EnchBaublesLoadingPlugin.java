@@ -4,15 +4,9 @@ import cpw.mods.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;
 
-import static goldenapple.enchbaubles.asm.EnchBaublesCoreContainer.RelaunchLogHelper;
-
 @IFMLLoadingPlugin.MCVersion("1.7.10")
 @IFMLLoadingPlugin.TransformerExclusions("goldenapple.enchbaubles") //modifying my own mod while I'm modifying my own mod isn't cool.
 public class EnchBaublesLoadingPlugin implements IFMLLoadingPlugin {
-
-    public EnchBaublesLoadingPlugin(){
-        RelaunchLogHelper.info("Loading...");
-    }
 
     @Override
     public String[] getASMTransformerClass() {

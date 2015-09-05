@@ -9,8 +9,6 @@ import net.minecraft.entity.Entity;
 import java.lang.reflect.Field;
 
 public class SteamcraftIntegration {
-    private static final String PLAYER_CONTROLLER = "flaxbeard.steamcraft.misc.SteamcraftPlayerController";
-
     @SideOnly(Side.CLIENT)
     public static void extendReach(Entity entity, float reachBonus){
         Minecraft mc = Minecraft.getMinecraft();
