@@ -15,7 +15,7 @@ import java.util.Set;
 
 public class EnchBaublesGuiFactory implements IModGuiFactory{
     @Override
-    public void initialize(Minecraft minecraftInstance) {
+    public void initialize(Minecraft mc) {
 
     }
 

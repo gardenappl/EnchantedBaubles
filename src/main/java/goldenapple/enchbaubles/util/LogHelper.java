@@ -1,4 +1,4 @@
-package goldenapple.enchbaubles.helper;
+package goldenapple.enchbaubles.util;
 
 import cpw.mods.fml.common.FMLLog;
 import goldenapple.enchbaubles.reference.Reference;

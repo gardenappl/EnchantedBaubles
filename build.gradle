@@ -17,16 +17,9 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "0.1"
+version = "1.7.10-0.1"
 group= "goldenapple.enchbaubles" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "EnchantedBaubles"
-
-jar {
-    manifest {
-        attributes 'FMLCorePlugin': 'goldenapple.enchbaubles.asm.EnchBaublesLoadingPlugin'
-        attributes 'FMLCorePluginContainsFMLMod': 'true'
-    }
-}
 
 minecraft {
     version = "1.7.10-10.13.4.1448-1.7.10"
@@ -35,7 +28,8 @@ minecraft {
 
 dependencies {
     compile files('Baubles-deobf-1.7.10-1.0.1.10.jar')
-    compile files('Botania r1.7-218-deobf')
+    compile files('Botania r1.7-218-deobf.jar')
+    compile files('EnchantedAPI-1.7.10-1.0-deobf.jar')
 }
 
 processResources

@@ -35,17 +35,17 @@ public class ConfigHandler {
     }
 
     private static void loadConfig(){
-        experienceEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Experience Enchant", true).setLanguageKey("config.enchbaubles.experience").setRequiresMcRestart(true).getBoolean();
-        reachEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Sky Reach Enchant", true).setLanguageKey("config.enchbaubles.reach").setRequiresMcRestart(true).getBoolean();
-        saturationEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Saturation Enchant", true).setLanguageKey("config.enchbaubles.saturation").setRequiresMcRestart(true).getBoolean();
-        regenEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Regeneration Enchant", true).setLanguageKey("config.enchbaubles.regen").setRequiresMcRestart(true).getBoolean();
-        criticalEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Fatality Enchant", true).setLanguageKey("config.enchbaubles.critical").setRequiresMcRestart(true).getBoolean();
+        experienceEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Experience Enchant", true).setLanguageKey("config.enchbaubles.experience").getBoolean();
+        reachEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Sky Reach Enchant", true).setLanguageKey("config.enchbaubles.reach").getBoolean();
+        saturationEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Saturation Enchant", true).setLanguageKey("config.enchbaubles.saturation").getBoolean();
+        regenEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Regeneration Enchant", true).setLanguageKey("config.enchbaubles.regen").getBoolean();
+        criticalEnabled = config.get(Configuration.CATEGORY_GENERAL, "Enable Fatality Enchant", true).setLanguageKey("config.enchbaubles.critical").getBoolean();
 
-        experienceWeight = config.get(Configuration.CATEGORY_GENERAL, "Experience Enchant Weight", 10).setLanguageKey("config.enchbaubles.experience_weight").setRequiresMcRestart(true).getInt();
-        reachWeight = config.get(Configuration.CATEGORY_GENERAL, "Sky Reach Enchant Weight", 3).setLanguageKey("config.enchbaubles.reach_weight").setRequiresMcRestart(true).getInt();
-        saturationWeight = config.get(Configuration.CATEGORY_GENERAL, "Saturation Enchant Weight", 4).setLanguageKey("config.enchbaubles.saturation_weight").setRequiresMcRestart(true).getInt();
-        regenWeight = config.get(Configuration.CATEGORY_GENERAL, "Regeneration Enchant Weight", 3).setLanguageKey("config.enchbaubles.regen_weight").setRequiresMcRestart(true).getInt();
-        criticalWeight = config.get(Configuration.CATEGORY_GENERAL, "Fatality Enchant Weight", 5).setLanguageKey("config.enchbaubles.critical_weight").setRequiresMcRestart(true).getInt();
+        experienceWeight = config.get(Configuration.CATEGORY_GENERAL, "Experience Enchant Weight", 10).setLanguageKey("config.enchbaubles.experience_weight").getInt();
+        reachWeight = config.get(Configuration.CATEGORY_GENERAL, "Sky Reach Enchant Weight", 3).setLanguageKey("config.enchbaubles.reach_weight").getInt();
+        saturationWeight = config.get(Configuration.CATEGORY_GENERAL, "Saturation Enchant Weight", 4).setLanguageKey("config.enchbaubles.saturation_weight").getInt();
+        regenWeight = config.get(Configuration.CATEGORY_GENERAL, "Regeneration Enchant Weight", 3).setLanguageKey("config.enchbaubles.regen_weight").getInt();
+        criticalWeight = config.get(Configuration.CATEGORY_GENERAL, "Fatality Enchant Weight", 5).setLanguageKey("config.enchbaubles.critical_weight").getInt();
 
         experienceID = config.get(Configuration.CATEGORY_GENERAL, "Experience Enchant ID", 133).setMinValue(0).setMaxValue(255).setLanguageKey("config.enchbaubles.experience_id").setRequiresMcRestart(true).getInt();
         reachID = config.get(Configuration.CATEGORY_GENERAL, "Sky Reach Enchant ID", 134).setMinValue(0).setMaxValue(255).setLanguageKey("config.enchbaubles.reach_id").setRequiresMcRestart(true).getInt();

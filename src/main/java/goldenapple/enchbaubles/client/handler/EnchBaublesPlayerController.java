@@ -22,12 +22,12 @@ public class EnchBaublesPlayerController extends PlayerControllerMP implements I
         return super.getBlockReachDistance() + reachBonus;
     }
 
-   //Override
+  //@Override
     public void setReachDistanceExtension(float reachBonus) {
         this.reachBonus = reachBonus;
     }
 
-   //Override
+  //@Override
     public float getReachDistanceExtension() {
         return reachBonus;
     }

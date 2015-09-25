@@ -1,5 +1,7 @@
 package goldenapple.enchbaubles.enchant;
 
+import goldenapple.enchbaubles.handler.ConfigHandler;
+
 public class EnchantmentCritical extends EnchantmentBauble {
     public EnchantmentCritical(int id, int weight) {
         super(id, weight);
@@ -8,7 +10,7 @@ public class EnchantmentCritical extends EnchantmentBauble {
 
     @Override
     public int getMinEnchantability(int lvl) {
-        return 17 + 12 * (lvl - 1);
+        return 15 + 12 * (lvl - 1);
     }
 
     @Override
@@ -19,5 +21,10 @@ public class EnchantmentCritical extends EnchantmentBauble {
     @Override
     public int getMaxLevel() {
         return 2;
+    }
+
+    @Override
+    public int getWeight() {
+        return ConfigHandler.criticalEnabled ? ConfigHandler.criticalWeight : 0;
     }
 }

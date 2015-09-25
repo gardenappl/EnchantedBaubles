@@ -2,7 +2,7 @@ package goldenapple.enchbaubles.integration;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import goldenapple.enchbaubles.helper.LogHelper;
+import goldenapple.enchbaubles.util.LogHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 

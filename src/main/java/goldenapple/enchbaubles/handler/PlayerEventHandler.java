@@ -10,7 +10,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.PlayerPickupXpEvent;
 
 import java.util.HashMap;
 
@@ -58,23 +57,14 @@ public class PlayerEventHandler {
     }
 
     @SubscribeEvent
-    public void onPickupXP(PlayerPickupXpEvent event){
-        if(event.entityPlayer != null && experienceMap.get(event.entityPlayer.getEntityId()) != null){
-            int lvl = experienceMap.get(event.entityPlayer.getEntityId());
-            double bonus = 1 + (lvl * 0.1);
-            event.orb.xpValue = (int)(event.orb.getXpValue() * bonus);
-        }
-    }
-
-    @SubscribeEvent
     public void onAttack(LivingHurtEvent event){
-        if(!(event.source.getEntity() instanceof EntityPlayer))
+        if(!(event.source.getEntity() instanceof EntityPlayer) && !event.entityLiving.worldObj.isRemote)
             return;
         EntityPlayer player = (EntityPlayer) event.source.getEntity();
         int criticalLvl = criticalMap.get(player.getEntityId());
 
         if(criticalLvl > 0 && player.fallDistance > 0.0F && !player.onGround && !player.isOnLadder() && !player.isInWater() && !player.isPotionActive(Potion.blindness) && player.ridingEntity == null) {
-            event.ammount *= 1 + criticalLvl * 0.25;
+            event.ammount *= 1 + criticalLvl * 0.4;
 
             if(event.entityLiving.isRiding()) {
                 if(event.entityLiving.ridingEntity != null) {
@@ -82,12 +72,6 @@ public class PlayerEventHandler {
                     event.entityLiving.ridingEntity = null;
                 }
             }
-            event.entityLiving.onGround = false;
-            event.entityLiving.isAirBorne = true;
-            event.entityLiving.motionY = 0.3D * criticalLvl;
-
-            if(player.getCurrentEquippedItem() != null)
-                event.entityLiving.renderBrokenItemStack(player.getCurrentEquippedItem());
         }
     }
 }

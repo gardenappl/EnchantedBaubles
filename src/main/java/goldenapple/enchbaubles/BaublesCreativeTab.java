@@ -21,9 +21,9 @@ public class BaublesCreativeTab extends CreativeTabs {
     @Override
     public void displayAllReleventItems(List list) {
         for(Object object : Item.itemRegistry){
-            Item item = (Item) object;
+            if(object != null && object instanceof Item) {
+                Item item = (Item) object;
 
-            if(item != null) {
                 if (item instanceof IBauble)
                     item.getSubItems(item, this, list);
                 else {
