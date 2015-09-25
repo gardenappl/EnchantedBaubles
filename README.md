@@ -1,6 +1,4 @@
 # EnchantedBaubles
-A Minecraft mod that allows enchantements on Baubles. Still heavily work in progress.
+A Minecraft mod that allows enchantements on Baubles. It kinda compiles, but most of the enchantments don't function yet. It uses the [EnchantedAPI] (https://github.com/goldenapple3/EnchantedAPI) and obviously the [Baubles] (https://github.com/azanor/Baubles) API.
 
-**Note**: If you want to run the mod in a development environment, you'll have to put
-```-Dfml.coreMods.load=goldenapple.enchbaubles.asm.EnchBaublesLoadingPlugin``` in the *VM* arguments 
-(*not* the Program arguments). Otherwise FML won't load the built-in coremod, and the mod won't work.
+**Note**: If you want to run the mod in a development environment, you'll need a deobfuscated version of EnchantedAPI in your /mods/ folder. It's build.gradle should give you a proper deobfuscated jar , though.
